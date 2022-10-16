@@ -1,0 +1,10 @@
+<body>
+<div class="main-content">
+{{>header}}
+    {{#if location}}
+        <p>In my location: {{location}} is actually {{currentTemperature}} °C and feels like {{feelslikeTemperature}} °C.</p>
+        <p>The weather is {{description}} ...</p>
+        {{/if}}
+</div>
+</body>
+{{>footer}}
