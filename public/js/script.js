@@ -12,8 +12,7 @@ form.addEventListener("submit", (e) => {
     fetch("http://localhost:3000/weatherapi?address=" + city).then((response) => {
         response.json().then((data) => {
             if (data.error) {
-                let output = data.error
-                responseForecast.textContent = output
+                responseForecast.textContent = data.error
             } else {
                 let output = "In my location: " + data.location + " is actually " + data.currentTemperature + " °C and feels like " + data.feelslikeTemperature + " °C."
                 responseForecast.textContent = output
