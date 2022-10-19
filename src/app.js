@@ -4,6 +4,7 @@ const app = express()
 const hbs = require("hbs")
 const geoLocation = require("./utils/geolocation.js")
 const forecast = require("./utils/forecast.js")
+const port = process.env.PORT || 3000
 
 //define paths for express config
 const publicDir = path.join(__dirname, "../public")
@@ -21,7 +22,7 @@ app.use(express.static(publicDir))
 
 app.get("", (req, res) => {
     res.render("index", {
-        title: "HP",
+        title: "Weather APP",
         name: "Evzen"
     })
 })
@@ -100,7 +101,7 @@ app.get("*", (req, res) => {
         })
 })
 
-app.listen(3000, () => {
-        console.log("server is listening on port 3000.")
+app.listen(port, () => {
+        console.log("server is listening on port " + port)
     }
 )
