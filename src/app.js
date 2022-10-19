@@ -67,7 +67,7 @@ app.get("/weatherapi", (req, res) => {
                     error: "Search string is wrong. Type your city."
                 })
         }
-        forecast(geoData, (error, {location, description, currentTemperature, feelslikeTemperature} = {}) => {
+        forecast(geoData, (error, {location, description, currentTemperature, feelslikeTemperature, humidity} = {}) => {
             if (error) {
                 return res.send(
                     {
@@ -83,7 +83,8 @@ app.get("/weatherapi", (req, res) => {
                     location: location,
                     description: description,
                     currentTemperature: currentTemperature,
-                    feelslikeTemperature: feelslikeTemperature
+                    feelslikeTemperature: feelslikeTemperature,
+                    humidity: humidity
                 })
         })
     })
