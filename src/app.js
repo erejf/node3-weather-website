@@ -27,6 +27,13 @@ app.get("", (req, res) => {
     })
 })
 
+app.get("/", (req, res) => {
+    res.render("index", {
+        title: "Weather APP",
+        name: "Evzen"
+    })
+})
+
 app.get("/about", (req, res) => {
     res.render("about", {
         title: "About",
